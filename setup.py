@@ -1,12 +1,12 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # reading long description from file
-with open('app/Readme.md', 'r') as file:
+with open('kingscriptstest/Readme.md', 'r') as file:
     long_description = file.read()
 
 
 # specify requirements of your package here
-REQUIREMENTS = ['requests', 'pandas', 'os']
+REQUIREMENTS = ['requests', 'pandas']
 
 # some more details
 CLASSIFIERS = [
@@ -25,7 +25,7 @@ CLASSIFIERS = [
 ]
 
 # calling the setup function
-setup(name='mygmap',
+setup(name='kingscriptstest',
       version='1.0.0',
       description='Test push of the King Scripts',
       long_description=long_description,
@@ -33,7 +33,8 @@ setup(name='mygmap',
       author='Nikhil Kumar Singh',
       author_email='mtanner@kingoperating.com',
       license='MIT',
-      packages=['geo'],
+      packages_dir={'': 'kingscriptstest'},
+      packages=find_packages(where='kingscriptstest'),
       classifiers=CLASSIFIERS,
       install_requires=REQUIREMENTS,
       keywords='maps location address'

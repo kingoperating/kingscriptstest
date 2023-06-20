@@ -40,7 +40,7 @@ def getWellProductionData(apiKey, wellApi14):
     # POST request to get token
     session = requests.Session()
     url = 'https://api.enverus.com/v3/direct-access/tokens'
-    secretKey = "DbMGvz0WhBgz9a5MNEbzlzK_B0YlHwp3ow6tc7AW31i45856daynEFFKwyrRDV5V"
+    secretKey = apiKey
     headers = {'Content-Type': 'application/json', }
     data = {'secretKey': secretKey}
     response_token = session.post(url, headers=headers, json=data)
